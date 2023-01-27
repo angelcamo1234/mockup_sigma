@@ -65,6 +65,16 @@
                     <span class="ms-1 d-none d-sm-inline">STOCK DEALER</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('metas') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'metas' ? 'text-primary' : 'text-white' }}">
+                    <span class="ms-1 d-none d-sm-inline">METAS</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('gestion') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'gestion' ? 'text-primary' : 'text-white' }}">
+                    <span class="ms-1 d-none d-sm-inline">GESTIÓN</span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

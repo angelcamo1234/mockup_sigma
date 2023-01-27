@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', '- Login')
 
 @section('content')
 <div class="w-100 d-flex justify-content-center align-items-center" style="height: 95vh">

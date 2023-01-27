@@ -1,8 +1,10 @@
 @extends('layouts.app')
+@section('title', '- Retencion')
 
 @section('content')
 
 <div class="form-group px-4">
+    <h1 class="mb-3">RETENCIÓN</h1>
     <div class="mb-3 row col-12 col-md-6">
         <label for="dealer" class="col-sm-2 col-form-label">DEALER</label>
         <div class="col-sm-10">
@@ -118,7 +120,7 @@
 @endsection
 
 @section('scripts')
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 <script>
 
 $('#dealer').on('change', function() {

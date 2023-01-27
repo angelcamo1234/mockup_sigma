@@ -1,8 +1,10 @@
 @extends('layouts.app')
+@section('title', '- Stock dealer')
 
 @section('content')
 
 <div class="form-group px-4">
+    <h1 class="mb-3">STOCK DEALER</h1>
     <div class="mb-3 row col-12 col-md-6">
         <label for="marca" class="col-sm-2 col-form-label">MARCA</label>
         <div class="col-sm-10">
