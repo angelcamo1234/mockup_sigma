@@ -41,25 +41,32 @@
 </ul>
 <div class="tab-content mt-3" id="myTabContent">
     <div class="tab-pane fade show active overflow-auto" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-        <table class="table table-sm text-center" style="font-size: 14px">
+        <table class="table table-sm text-center" style="font-size: 13.5px">
             <tr>
                 <td>MES:</td>
                 <td>DIC-22</td>
-                <td colspan="11" class="text-center r bg-gray">GESTIÓN DE REPUESTOS</td>
+                <td colspan="11" class="text-center" style="background-color: #f2f2f2!important">GESTIÓN DE REPUESTOS</td>
                 <td></td>
-                <td colspan="9" style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td></td>
+                <td></td>
+                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td></td>
+                <td></td>
+                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td></td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
                 <td class="bg-green-so text-white r">META</td>
                 <td></td>
-                <td class="bg-blue-so text-white r">PREVISIÓN</td>
-                <td class="bg-yellow-so text-white r">GAP</td>
-                <td class="bg-blue-so text-white r">CUMPLIMIENTO</td>
+                <td class="bg-dgray text-white">PREVISIÓN</td>
+                <td class="bg-dgray text-white">GAP</td>
+                <td class="bg-dgray text-white">CUMPLIMIENTO</td>
                 <td></td>
-                <td class="bg-bluem-so text-white r">REAL</td>
-                <td class="bg-bluem-so text-white r">AVANCE</td>
+                <td class="bg-blue-so text-white r">REAL</td>
+                <td class="bg-blue-so text-white r">AVANCE</td>
                 <td></td>
                 <td class="bg-yellow-so text-white r">INVENTARIO</td>
                 <td class="bg-yellow-so text-white r">MOS</td>
@@ -117,25 +124,32 @@
         </table>
     </div>
     <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-        <table class="table table-sm text-center" style="font-size: 14px">
+        <table class="table table-sm text-center" style="font-size: 13px">
             <tr>
                 <td>MES:</td>
                 <td>DIC-22</td>
                 <td colspan="8" class="text-center r bg-gray">AVANCE PASOS MECÁNICA</td>
                 <td></td>
-                <td colspan="9" style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td></td>
+                <td></td>
+                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td></td>
+                <td></td>
+                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td></td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
                 <td class="bg-green-so text-white r">META</td>
                 <td></td>
-                <td class="bg-blue-so text-white r">PREVISIÓN</td>
-                <td class="bg-yellow-so text-white r">GAP</td>
-                <td class="bg-blue-so text-white r">CUMPLIMIENTO</td>
+                <td class="bg-dgray text-white">PREVISIÓN</td>
+                <td class="bg-dgray text-white">GAP</td>
+                <td class="bg-dgray text-white">CUMPLIMIENTO</td>
                 <td></td>
-                <td class="bg-bluem-so text-white r">REAL</td>
-                <td class="bg-bluem-so text-white r">AVANCE</td>
+                <td class="bg-blue-so text-white r">REAL</td>
+                <td class="bg-blue-so text-white r">AVANCE</td>
                 <td></td>
                 <td class="r" style="background-color: #ddebf7">NOV-22</td>
                 <td class="r">VARIACIÓN %</td>
@@ -186,25 +200,32 @@
             </tr>
             @endforeach
         </table>
-        <table class="table table-sm text-center mt-3" style="font-size: 14px">
+        <table class="table table-sm text-center mt-3" style="font-size: 13px">
             <tr>
                 <td>MES:</td>
                 <td>DIC-22</td>
                 <td colspan="8" class="text-center r bg-gray">AVANCE PASOS PYP</td>
                 <td></td>
-                <td colspan="9" style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td></td>
+                <td></td>
+                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td></td>
+                <td></td>
+                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td></td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
                 <td class="bg-green-so text-white r">META</td>
                 <td></td>
-                <td class="bg-blue-so text-white r">PREVISIÓN</td>
-                <td class="bg-yellow-so text-white r">GAP</td>
-                <td class="bg-blue-so text-white r">CUMPLIMIENTO</td>
+                <td class="bg-dgray text-white">PREVISIÓN</td>
+                <td class="bg-dgray text-white">GAP</td>
+                <td class="bg-dgray text-white">CUMPLIMIENTO</td>
                 <td></td>
-                <td class="bg-bluem-so text-white r">REAL</td>
-                <td class="bg-bluem-so text-white r">AVANCE</td>
+                <td class="bg-blue-so text-white r">REAL</td>
+                <td class="bg-blue-so text-white r">AVANCE</td>
                 <td></td>
                 <td class="r" style="background-color: #ddebf7">NOV-22</td>
                 <td class="r">VARIACIÓN %</td>

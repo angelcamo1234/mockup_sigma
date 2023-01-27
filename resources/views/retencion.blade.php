@@ -124,7 +124,7 @@
 $('#dealer').on('change', function() {
     let dealer_val = $(this).val() || false
 
-    if (!dealer_val) $('#marca').change()
+    $('#marca').change()
 })
 
 $('#marca').on('change', function() {
@@ -135,9 +135,10 @@ $('#marca').on('change', function() {
     else {
         console.log('test')
         $('#div_modelo_select').addClass('d-none')        
-        $('#modelo').val(null)
-        $('#modelo').change()
+        $('#modelo').val(null)        
     }
+
+    $('#modelo').change()
 })
 
 $('#modelo').on('change', function() {
@@ -151,133 +152,263 @@ $('#modelo').on('change', function() {
 
 Highcharts.chart('dealer-chart', {
     chart: {
-        type: 'column'
+        zoomType: 'xy'
     },
     title: {
-        text: 'DEALER',
-        align: 'center'
+        text: 'Ots objetivo',
+        align: 'left'
     },
-    xAxis: {
-        categories: {!! json_encode($data->col_1->anhos) !!}
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Count trophies'
-        },
-        stackLabels: {
-            enabled: true,
+    /* subtitle: {
+        text: 'Source: WorldClimate.com',
+        align: 'left'
+    }, */
+    xAxis: [{
+        categories: {!! json_encode($data->col_1->anhos) !!},
+        crosshair: true
+    }],
+    yAxis: [{ // Primary yAxis
+        labels: {
+            format: '{value}%',
             style: {
-                fontWeight: 'bold',
-                color: ( // theme
-                    Highcharts.defaultOptions.title.style &&
-                    Highcharts.defaultOptions.title.style.color
-                ) || 'gray',
-                textOutline: 'none'
+                color: Highcharts.getOptions().colors[2]
+            }
+        },
+        title: {
+            text: 'Porcentaje',
+            style: {
+                color: Highcharts.getOptions().colors[2]
+            }
+        },
+        opposite: true
+
+    }, { // Secondary yAxis
+        gridLineWidth: 0,
+        title: {
+            text: 'OTs',
+            style: {
+                color: Highcharts.getOptions().colors[0]
+            }
+        },
+        labels: {
+            format: '{value}',
+            style: {
+                color: Highcharts.getOptions().colors[0]
             }
         }
+
+    }, { // Tertiary yAxis
+        gridLineWidth: 0,
+        title: {
+            text: '',
+            style: {
+                color: Highcharts.getOptions().colors[1]
+            }
+        },
+        labels: {
+            format: '{value} mb',
+            style: {
+                color: Highcharts.getOptions().colors[1]
+            }
+        },
+        opposite: true
+    }],
+    tooltip: {
+        shared: true
     },
     /* legend: {
+        layout: 'vertical',
         align: 'left',
-        x: 70,
+        x: 80,
         verticalAlign: 'top',
-        y: 70,
+        y: 55,
         floating: true,
         backgroundColor:
-            Highcharts.defaultOptions.legend.backgroundColor || 'white',
-        borderColor: '#CCC',
-        borderWidth: 1,
-        shadow: false
+            Highcharts.defaultOptions.legend.backgroundColor || // theme
+            'rgba(255,255,255,0.25)'
     }, */
-    tooltip: {
-        headerFormat: '<b>{point.x}</b><br/>',
-        pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
-    },
-    plotOptions: {
-        column: {
-            stacking: 'normal',
-            dataLabels: {
-                enabled: true
-            }
-        }
-    },
     series: [{
-        name: 'Retencion',
-        data: {!! json_encode($data->col_1->alcance_retencion) !!},
-        color: 'white',
-        borderColor: 'black'
+        name: 'OTs MEC',
+        type: 'column',
+        yAxis: 1,
+        data: {!! json_encode($data->col_1->retencion) !!},
+        tooltip: {
+            valueSuffix: ''
+        }
+
     }, {
-        name: 'Alcance',
+        name: 'Porcentaje',
+        type: 'spline',
+        color: 'red',
         data: {!! json_encode($data->col_1->alcance) !!},
-        color: '#4472c4',
-        borderColor: 'black'
-    }]
+        tooltip: {
+            valueSuffix: ' %'
+        }
+    }],
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    floating: false,
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom',
+                    x: 0,
+                    y: 0
+                },
+                yAxis: [{
+                    labels: {
+                        align: 'right',
+                        x: 0,
+                        y: -6
+                    },
+                    showLastLabel: false
+                }, {
+                    labels: {
+                        align: 'left',
+                        x: 0,
+                        y: -6
+                    },
+                    showLastLabel: false
+                }, {
+                    visible: false
+                }]
+            }
+        }]
+    }
 });
 
 function chart2() {
     Highcharts.chart('dealer-chart-2', {
     chart: {
-        type: 'column'
+        zoomType: 'xy'
     },
     title: {
-        text: 'MODELO',
-        align: 'center'
+        text: 'Ots objetivo',
+        align: 'left'
     },
-    xAxis: {
-        categories: {!! json_encode($data->col_1->anhos) !!}
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Count trophies'
-        },
-        stackLabels: {
-            enabled: true,
+    /* subtitle: {
+        text: 'Source: WorldClimate.com',
+        align: 'left'
+    }, */
+    xAxis: [{
+        categories: {!! json_encode($data->col_2->anhos) !!},
+        crosshair: true
+    }],
+    yAxis: [{ // Primary yAxis
+        labels: {
+            format: '{value}%',
             style: {
-                fontWeight: 'bold',
-                color: ( // theme
-                    Highcharts.defaultOptions.title.style &&
-                    Highcharts.defaultOptions.title.style.color
-                ) || 'gray',
-                textOutline: 'none'
+                color: Highcharts.getOptions().colors[2]
+            }
+        },
+        title: {
+            text: 'Porcentaje',
+            style: {
+                color: Highcharts.getOptions().colors[2]
+            }
+        },
+        opposite: true
+
+    }, { // Secondary yAxis
+        gridLineWidth: 0,
+        title: {
+            text: 'OTs',
+            style: {
+                color: Highcharts.getOptions().colors[0]
+            }
+        },
+        labels: {
+            format: '{value}',
+            style: {
+                color: Highcharts.getOptions().colors[0]
             }
         }
+
+    }, { // Tertiary yAxis
+        gridLineWidth: 0,
+        title: {
+            text: '',
+            style: {
+                color: Highcharts.getOptions().colors[1]
+            }
+        },
+        labels: {
+            format: '{value} mb',
+            style: {
+                color: Highcharts.getOptions().colors[1]
+            }
+        },
+        opposite: true
+    }],
+    tooltip: {
+        shared: true
     },
     /* legend: {
+        layout: 'vertical',
         align: 'left',
-        x: 70,
+        x: 80,
         verticalAlign: 'top',
-        y: 70,
+        y: 55,
         floating: true,
         backgroundColor:
-            Highcharts.defaultOptions.legend.backgroundColor || 'white',
-        borderColor: '#CCC',
-        borderWidth: 1,
-        shadow: false
+            Highcharts.defaultOptions.legend.backgroundColor || // theme
+            'rgba(255,255,255,0.25)'
     }, */
-    tooltip: {
-        headerFormat: '<b>{point.x}</b><br/>',
-        pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
-    },
-    plotOptions: {
-        column: {
-            stacking: 'normal',
-            dataLabels: {
-                enabled: true
-            }
-        }
-    },
     series: [{
-        name: 'Retencion',
-        data: {!! json_encode($data->col_2->alcance_retencion) !!},
-        color: 'white',
-        borderColor: 'black'
+        name: 'OTs MEC',
+        type: 'column',
+        yAxis: 1,
+        data: {!! json_encode($data->col_2->retencion) !!},
+        tooltip: {
+            valueSuffix: ''
+        }
+
     }, {
-        name: 'Alcance',
+        name: 'Porcentaje',
+        type: 'spline',
+        color: 'red',
         data: {!! json_encode($data->col_2->alcance) !!},
-        color: '#4472c4',
-        borderColor: 'black'
-    }]
+        tooltip: {
+            valueSuffix: ' %'
+        }
+    }],
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    floating: false,
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom',
+                    x: 0,
+                    y: 0
+                },
+                yAxis: [{
+                    labels: {
+                        align: 'right',
+                        x: 0,
+                        y: -6
+                    },
+                    showLastLabel: false
+                }, {
+                    labels: {
+                        align: 'left',
+                        x: 0,
+                        y: -6
+                    },
+                    showLastLabel: false
+                }, {
+                    visible: false
+                }]
+            }
+        }]
+    }
 });
 }
 

@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reporte Sigma</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-</head>
-
-<body>
     <style>
         .bg-sigma {
             background-color: #101f2d!important;
@@ -83,9 +80,21 @@
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
             gap: 1rem;
         }
-    </style>
 
-    @include('layouts.navbar')
+        .bg-gray {
+            background-color: #efefef!important;
+        }
+        .bg-dgray {
+            background-color: #595959!important;
+        }
+    </style>
+</head>
+
+<body class="bg-gray">    
+
+    @if (Route::currentRouteName() !== 'login')
+        @include('layouts.navbar')
+    @endif
 
     <div class="container mt-3">
         @yield('content')

@@ -31,15 +31,16 @@
                 <th scope="col" class="text-danger">%</th>
             </tr>
             @foreach ($dealer as $d)
-                <tr class="">
-                    <td>{{ $d->CLASIFICACION }}</td>
-                    <td>S/ {{ number_format($d->STOCK, 0, '.', ',') }}</td>
-                    <td class="text-danger">{{ $d->PORCENTAJE }}%</td>
-                </tr>
+            <tr class="">
+                <td>{{ $d->CLASIFICACION }}</td>
+                <td>S/ {{ number_format($d->STOCK, 0, '.', ',') }}</td>
+                <td class="text-danger">{{ $d->PORCENTAJE }}%</td>
+            </tr>
             @endforeach
             <tr>
                 <td style="background-color: #d9e1f2">TOTAL</td>
-                <td style="background-color: #d9e1f2">S/ {{ number_format($dealer->reduce(function($o, $item) { return $o += $item->STOCK; }, 0), 0, '.', ',') }}</td>
+                <td style="background-color: #d9e1f2">S/ {{ number_format($dealer->reduce(function($o, $item) { return
+                    $o += $item->STOCK; }, 0), 0, '.', ',') }}</td>
                 <td></td>
             </tr>
             <tr>
@@ -70,8 +71,8 @@
 @endsection
 
 @section('scripts')
-    <script>
-        Highcharts.chart('my_chart', {
+<script>
+    Highcharts.chart('my_chart', {
     chart: {
         zoomType: 'xy'
     },
@@ -201,5 +202,5 @@
     }
 });
 
-    </script>
+</script>
 @endsection
