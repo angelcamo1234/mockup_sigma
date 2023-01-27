@@ -33,13 +33,13 @@
     </div>
 </nav>
 
-<div class="offcanvas offcanvas-start w-25 bg-dblue" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false" style="width: 220px!important">
+<div class="offcanvas offcanvas-start w-25 bg-dblue sidebar" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false" style="width: 220px!important">
     <div class="offcanvas-header">
-        <h6 class="offcanvas-title d-none d-sm-block text-white" id="offcanvas">Menu</h6>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <h6 class="offcanvas-title d-none d-sm-block text-white" id="offcanvas">MENÚ</h6>
+        <button type="button" class="btn-close bg-secondary" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body px-0">
-        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start " id="menu">
+        {{-- <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start " id="menu">
             <li class="nav-item">
                 <a href="{{ route('home') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'home' ? 'text-primary' : 'text-white' }}">
                     <span class="ms-1 d-none d-sm-inline">INICIO</span>
@@ -74,6 +74,58 @@
                 <a href="{{ route('gestion') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'gestion' ? 'text-primary' : 'text-white' }}">
                     <span class="ms-1 d-none d-sm-inline">GESTIÓN</span>
                 </a>
+            </li>
+        </ul> --}}
+        <ul class="nav flex-column" id="nav_accordion">
+            <li class="nav-item">
+                <a href="{{ route('home') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'home' ? 'text-primary' : 'text-white' }}">
+                    <span class="d-none d-sm-inline">INICIO</span>
+                </a>
+            </li>
+            <li class="nav-item has-submenu">
+                <a class="nav-link text-white" href="#">REPORTES @include('layouts.row_down')</a>
+                <ul class="submenu collapse">
+                    <li class="nav-item">
+                        <a href="{{ route('seguimiento_general') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'seguimiento_general' ? 'text-primary' : 'text-white' }}">
+                            <span class="ms-1 d-none d-sm-inline">SEGUIMIENTO GENERAL</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('gestion_por_dealer') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'gestion_por_dealer' ? 'text-primary' : 'text-white' }}">
+                            <span class="ms-1 d-none d-sm-inline">GESTIÓN POR DEALER</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('retencion') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'retencion' ? 'text-primary' : 'text-white' }}">
+                            <span class="ms-1 d-none d-sm-inline">RETENCIÓN</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('stock_dealer') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'stock_dealer' ? 'text-primary' : 'text-white' }}">
+                            <span class="ms-1 d-none d-sm-inline">STOCK DEALER</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item has-submenu">
+                <a class="nav-link text-white" href="#">GESTIÓN @include('layouts.row_down')</a>
+                <ul class="submenu collapse">
+                    <li class="nav-item">
+                        <a href="{{ route('metas') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'metas' ? 'text-primary' : 'text-white' }}">
+                            <span class="ms-1 d-none d-sm-inline">METAS</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('gestion') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'gestion' ? 'text-primary' : 'text-white' }}">
+                            <span class="ms-1 d-none d-sm-inline">GESTIÓN JEFE</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('asignar_dealer') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'asignar_dealer' ? 'text-primary' : 'text-white' }}">
+                            <span class="ms-1 d-none d-sm-inline">ASIGNACIÓN DEALER</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </div>

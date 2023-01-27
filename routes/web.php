@@ -168,3 +168,11 @@ Route::get('/gestion', function () {
 
     return view('gestion', compact('info_1', 'info_2', 'info_3'));
 })->name('gestion');
+
+Route::get('/asignar_dealer', function () {
+
+    $locales = ['LOCAL 1', 'LOCAL 2', 'LOCAL 3', 'LOCAL 4', 'LOCAL 5', 'LOCAL 6'];
+    $dealers = ['DEALER 1', 'DEALER 2', 'DEALER 3', 'DEALER 4', 'DEALER 5', 'DEALER 6'];
+
+    return view('asignar_dealer', compact('locales', 'dealers'));
+})->name('asignar_dealer');

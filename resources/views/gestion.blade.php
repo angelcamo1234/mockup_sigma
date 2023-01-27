@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="form-group px-4">
-    <h1 class="mb-3">GESTIÓN</h1>
+    <h1 class="mb-3">GESTIÓN JEFE</h1>
     
 </div>
 

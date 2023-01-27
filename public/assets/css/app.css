@@ -1,0 +1,92 @@
+.sidebar li .submenu{ 
+	list-style: none; 
+	margin: 0; 
+	padding: 0; 
+	padding-left: 1rem; 
+	padding-right: 1rem;
+}
+
+.bg-dblue {
+    background-color: #101f2d!important;
+}
+
+.bg-gray {
+    background-color: rgb(242, 242, 242)!important;
+}
+
+.bg-yellow-so {
+    background-color: rgba(255, 192, 0)!important;
+}
+
+.bg-yellow {
+    background-color: rgba(255, 192, 0, .2)!important;
+}
+
+.text-yellow {
+    color: rgb(255, 192, 0)!important;
+}
+
+.bg-red-so {
+    background-color: rgba(255, 0, 0)!important;
+}
+
+.bg-red {
+    background-color: rgba(255, 0, 0, .2)!important;
+}
+
+.text-red {
+    color: rgba(255, 0, 0)!important;
+}
+
+.bg-green-so {
+    background-color: rgba(0, 176, 80)!important;
+}
+
+.bg-green {
+    background-color: rgba(0, 176, 80, .2)!important;
+}
+
+.text-green {
+    color: rgb(0, 176, 80)!important;
+}
+
+.bg-blue-so {
+    background-color: rgb(68, 114, 196)!important;
+}
+
+.bg-blue {
+    background-color: rgb(68, 114, 196, .2)!important;
+}
+
+.bg-bluem-so {
+    background-color: rgb(68, 84, 106)!important;
+}
+
+.tb-border {
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+.table-collapse {
+    border-collapse: collapse;
+}
+
+.tabla-con-bordes td, .tabla-con-bordes th{
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;            
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 1rem;
+}
+
+.bg-gray {
+    background-color: #efefef!important;
+}
+.bg-dgray {
+    background-color: #595959!important;
+}
