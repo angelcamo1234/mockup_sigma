@@ -13,11 +13,11 @@
                     @csrf
                     <div class="form-group">
                         <label for="usuario">Usuario</label>
-                        <input id="usuario" class="form-control" type="text" name="usuario">
+                        <input id="usuario" class="form-control" type="text" name="usuario" required>
                     </div>
                     <div class="form-group mt-3">
                         <label for="password">Contraseña</label>
-                        <input id="password" class="form-control" type="password" name="password">
+                        <input id="password" class="form-control" type="password" name="password" required>
                     </div>
                     <div class="form-group mt-3 d-flex justify-content-center">
                         <button class="btn btn-primary">Ingresar</button>
