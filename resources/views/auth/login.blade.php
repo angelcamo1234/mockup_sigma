@@ -8,7 +8,8 @@
                 <img src="{{ asset('assets/images/Logo.jpg') }}" alt="Logo Sistema" width="300">
             </div>
             <div class="row p-5">
-                <form action="{{ route('home') }}">
+                <form action="{{ route('login.post') }}" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for="usuario">Usuario</label>
                         <input id="usuario" class="form-control" type="text" name="usuario">

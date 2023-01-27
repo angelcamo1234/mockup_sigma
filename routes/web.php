@@ -14,12 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('auth.login');
+})->name('login');
+
+Route::get('/inicio', function () {
     return view('home');
 })->name('home');
 
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
+Route::post('/login', function () {
+    return redirect()->route('home');
+})->name('login.post');
 
 Route::get('/seguimiento_general', function () {
     $info_1 = [
