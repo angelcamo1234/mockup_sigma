@@ -40,10 +40,10 @@
                         S/ <span id="proyeccion_repuesto_total_span">0</span>
                         <input type="hidden" id="proyeccion_repuesto_total">
                     @else
-                        <input type="number" class="form-control" step="any" id="proyeccion_repuesto-{{ $loop->iteration }}">
+                        <input type="number" class="form-control text-center" step="any" id="proyeccion_repuesto-{{ $loop->iteration }}">
                     @endif
                 </td>
-                <td>
+                <td class="text-red bg-red">
                     @if ($loop->last)
                         <span id="alcance_repuesto_total">0</span>%
                     @else
@@ -85,10 +85,10 @@
                         <span id="proyeccion_mec_total_span">0</span>
                         <input type="hidden" id="proyeccion_mec_total">
                     @else
-                        <input type="number" class="form-control" step="any" id="proyeccion_mec-{{ $loop->iteration }}">
+                        <input type="number" class="form-control text-center" step="any" id="proyeccion_mec-{{ $loop->iteration }}">
                     @endif
                 </td>
-                <td>
+                <td class="text-red bg-red">
                     @if ($loop->last)
                         <span id="alcance_mec_total">0</span>%
                     @else
@@ -130,10 +130,10 @@
                         <span id="proyeccion_pyp_total_span">0</span>
                         <input type="hidden" id="proyeccion_pyp_total">
                     @else
-                        <input type="number" class="form-control" step="any" id="proyeccion_pyp-{{ $loop->iteration }}">
+                        <input type="number" class="form-control text-center" step="any" id="proyeccion_pyp-{{ $loop->iteration }}">
                     @endif
                 </td>
-                <td>
+                <td class="text-red bg-red">
                     @if ($loop->last)
                         <span id="alcance_pyp_total">0</span>%
                     @else
@@ -153,18 +153,35 @@
 
 @section('scripts')
 <script>
+    var color_quitar = 'text-red bg-red text-yellow bg-yellow text-green bg-green'
+
     $('#guardar').on('click', function() {
         window.location.reload();
     })
+
+    function setBackgroundColor(id, valor) {
+        let color
+
+        if (valor < 80) color = 'text-red bg-red'
+        else if (valor >= 80 && valor < 100) color = 'text-yellow bg-yellow'
+        else if (valor >= 100) color = 'text-green bg-green'
+
+        console.log(color)
+        $(id).parent().removeClass(color_quitar)
+        $(id).parent().addClass(color)
+    }
     
     /* REPUESTO */
     $('[id^="proyeccion_repuesto-"]').on('input', function() {
         let id = $(this).prop('id').split('-')[1]
         let proyeccion_valor = parseFloat($(this).val() || 0)
         let meta_valor = parseFloat($(`#meta_repuesto-${id}`).val())
-        let alcance_valor = parseInt((proyeccion_valor / meta_valor).toFixed(0))
-
-        $(`#alcance_repuesto-${id}`).text(alcance_valor)
+        let alcance_valor = parseInt((proyeccion_valor / meta_valor * 100).toFixed(0))
+        
+        let id_alcance = `#alcance_repuesto-${id}`
+        setBackgroundColor(id_alcance, alcance_valor)
+        
+        $(id_alcance).text(alcance_valor)        
 
         calcular_repuesto()
     })
@@ -179,9 +196,12 @@
         $('#proyeccion_repuesto_total_span').text(proyeccion_repuesto_total_valor)
 
         let meta_repuesto_total_valor = parseFloat($('#meta_repuesto_total').val())
-        let alcance_repuesto_total_valor = parseInt((proyeccion_repuesto_total_valor / meta_repuesto_total_valor).toFixed(0))
+        let alcance_repuesto_total_valor = parseInt((proyeccion_repuesto_total_valor / meta_repuesto_total_valor * 100).toFixed(0))
 
-        $('#alcance_repuesto_total').text(alcance_repuesto_total_valor)
+        let id_alcance = `#alcance_repuesto_total`
+        setBackgroundColor(id_alcance, alcance_repuesto_total_valor)
+
+        $(id_alcance).text(alcance_repuesto_total_valor)
     }
 
     /* MEC */
@@ -189,9 +209,12 @@
     let id = $(this).prop('id').split('-')[1]
     let proyeccion_valor = parseFloat($(this).val() || 0)
     let meta_valor = parseFloat($(`#meta_mec-${id}`).val())
-    let alcance_valor = parseInt((proyeccion_valor / meta_valor).toFixed(0))
+    let alcance_valor = parseInt((proyeccion_valor / meta_valor * 100).toFixed(0))
 
-    $(`#alcance_mec-${id}`).text(alcance_valor)
+    let id_alcance = `#alcance_mec-${id}`
+    setBackgroundColor(id_alcance, alcance_valor)
+
+    $(id_alcance).text(alcance_valor)
 
     calcular_mec()
 })
@@ -206,9 +229,12 @@ function calcular_mec() {
     $('#proyeccion_mec_total_span').text(proyeccion_mec_total_valor)
 
     let meta_mec_total_valor = parseFloat($('#meta_mec_total').val())
-    let alcance_mec_total_valor = parseInt((proyeccion_mec_total_valor / meta_mec_total_valor).toFixed(0))
+    let alcance_mec_total_valor = parseInt((proyeccion_mec_total_valor / meta_mec_total_valor * 100).toFixed(0))
 
-    $('#alcance_mec_total').text(alcance_mec_total_valor)
+    let id_alcance = '#alcance_mec_total'
+    setBackgroundColor(id_alcance, alcance_mec_total_valor)
+
+    $(id_alcance).text(alcance_mec_total_valor)
 }
 
     /* PYP */
@@ -216,9 +242,12 @@ function calcular_mec() {
     let id = $(this).prop('id').split('-')[1]
     let proyeccion_valor = parseFloat($(this).val() || 0)
     let meta_valor = parseFloat($(`#meta_pyp-${id}`).val())
-    let alcance_valor = parseInt((proyeccion_valor / meta_valor).toFixed(0))
+    let alcance_valor = parseInt((proyeccion_valor / meta_valor * 100).toFixed(0))
 
-    $(`#alcance_pyp-${id}`).text(alcance_valor)
+    let id_alcance = `#alcance_pyp-${id}`
+    setBackgroundColor(id_alcance, alcance_valor)
+
+    $(id_alcance).text(alcance_valor)
 
     calcular_pyp()
 })
@@ -233,9 +262,12 @@ function calcular_pyp() {
     $('#proyeccion_pyp_total_span').text(proyeccion_pyp_total_valor)
 
     let meta_pyp_total_valor = parseFloat($('#meta_pyp_total').val())
-    let alcance_pyp_total_valor = parseInt((proyeccion_pyp_total_valor / meta_pyp_total_valor).toFixed(0))
+    let alcance_pyp_total_valor = parseInt((proyeccion_pyp_total_valor / meta_pyp_total_valor * 100).toFixed(0))
 
-    $('#alcance_pyp_total').text(alcance_pyp_total_valor)
+    let id_alcance = '#alcance_pyp_total'
+    setBackgroundColor(id_alcance, alcance_pyp_total_valor)
+
+    $(id_alcance).text(alcance_pyp_total_valor)
 }
 </script>
 @endsection
