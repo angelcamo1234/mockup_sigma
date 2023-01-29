@@ -171,7 +171,7 @@ Route::get('/gestion', function () {
 
 Route::get('/asignar_dealer', function () {
 
-    $locales = ['LOCAL 1', 'LOCAL 2', 'LOCAL 3', 'LOCAL 4', 'LOCAL 5', 'LOCAL 6'];
+    $locales = ['DEALER 7', 'DEALER 8', 'DEALER 9', 'DEALER 10', 'DEALER 11', 'DEALER 12'];
     $dealers = ['DEALER 1', 'DEALER 2', 'DEALER 3', 'DEALER 4', 'DEALER 5', 'DEALER 6'];
 
     return view('asignar_dealer', compact('locales', 'dealers'));
