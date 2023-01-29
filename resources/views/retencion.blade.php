@@ -5,27 +5,28 @@
 
 <div class="form-group px-4">
     <h1 class="mb-3">RETENCIÓN</h1>
-    <div class="mb-3 row col-12 col-md-6">
-        <label for="dealer" class="col-sm-2 col-form-label">DEALER</label>
-        <div class="col-sm-10">
-            <select name="dealer" id="dealer" class="form-select">
-                <option value=""></option>
-                <option value="DEALER 1">DEALER 1</option>
-                <option value="DEALER 2">DEALER 2</option>
-            </select>
+    <div class="row">
+        <div class="mb-3 row col-12 col-md-6">
+            <label for="dealer" class="col-sm-2 col-form-label">DEALER</label>
+            <div class="col-sm-10">
+                <select name="dealer" id="dealer" class="form-select">
+                    <option value=""></option>
+                    <option value="DEALER 1">DEALER 1</option>
+                    <option value="DEALER 2">DEALER 2</option>
+                </select>
+            </div>
         </div>
-    </div>
-    <div class="mb-3 row col-12 col-md-6">
-        <label for="marca" class="col-sm-2 col-form-label">MARCA</label>
-        <div class="col-sm-10">
-            <select name="marca" id="marca" class="form-select">
-                <option value=""></option>
-                <option value="HYUNDAI">HYUNDAI</option>
-            </select>
+        <div class="mb-3 col-12 col-md-6 d-none d-md-block"></div>
+        <div class="mb-3 row col-12 col-md-6">
+            <label for="marca" class="col-sm-2 col-form-label">MARCA</label>
+            <div class="col-sm-10">
+                <select name="marca" id="marca" class="form-select">
+                    <option value=""></option>
+                    <option value="HYUNDAI">HYUNDAI</option>
+                </select>
+            </div>
         </div>
-    </div>    
-    <div class="mb-3 row col-12 justify-content-md-end d-none" id="div_modelo_select">
-        <div class="row col-12 col-md-6">
+        <div class="row col-12 col-md-6 d-none" id="div_modelo_select">
             <label for="modelo" class="col-sm-2 col-form-label">MODELO</label>
             <div class="col-sm-10">
                 <select name="modelo" id="modelo" class="form-select">
@@ -41,7 +42,7 @@
 </div>
 
 <div class="row m-3">
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-sm-12 col-md-6">
         <table class="table col-12">
             <tr>
                 <th></th>
@@ -78,7 +79,7 @@
 
         </div>
     </div>
-    <div class="col-12 col-md-6 d-none" id="div_modelo">
+    <div class="col-12 col-sm-12 col-md-6 d-none" id="div_modelo">
         <table class="table col-12">
             <tr>
                 <th></th>
@@ -176,7 +177,7 @@ Highcharts.chart('dealer-chart', {
             }
         },
         title: {
-            text: 'Porcentaje',
+            text: 'Alcance',
             style: {
                 color: Highcharts.getOptions().colors[2]
             }
@@ -186,13 +187,13 @@ Highcharts.chart('dealer-chart', {
     }, { // Secondary yAxis
         gridLineWidth: 0,
         title: {
-            text: 'OTs',
+            text: 'OBJ. RETENCIÓN',
             style: {
                 color: Highcharts.getOptions().colors[0]
             }
         },
         labels: {
-            format: '{value}',
+            format: '{value}%',
             style: {
                 color: Highcharts.getOptions().colors[0]
             }
@@ -229,16 +230,16 @@ Highcharts.chart('dealer-chart', {
             'rgba(255,255,255,0.25)'
     }, */
     series: [{
-        name: 'OTs MEC',
+        name: 'OBJ. RETENCIÓN',
         type: 'column',
         yAxis: 1,
         data: {!! json_encode($data->col_1->retencion) !!},
         tooltip: {
-            valueSuffix: ''
+            valueSuffix: ' %'
         }
 
     }, {
-        name: 'Porcentaje',
+        name: 'Alcance',
         type: 'spline',
         color: 'red',
         data: {!! json_encode($data->col_1->alcance) !!},
@@ -287,6 +288,7 @@ function chart2() {
     chart: {
         zoomType: 'xy'
     },
+    
     title: {
         text: 'Ots objetivo',
         align: 'left'
@@ -307,7 +309,7 @@ function chart2() {
             }
         },
         title: {
-            text: 'Porcentaje',
+            text: 'Alcance',
             style: {
                 color: Highcharts.getOptions().colors[2]
             }
@@ -317,13 +319,13 @@ function chart2() {
     }, { // Secondary yAxis
         gridLineWidth: 0,
         title: {
-            text: 'OTs',
+            text: 'OBJ. RETENCIÓN',
             style: {
                 color: Highcharts.getOptions().colors[0]
             }
         },
         labels: {
-            format: '{value}',
+            format: '{value}%',
             style: {
                 color: Highcharts.getOptions().colors[0]
             }
@@ -360,16 +362,16 @@ function chart2() {
             'rgba(255,255,255,0.25)'
     }, */
     series: [{
-        name: 'OTs MEC',
+        name: 'OBJ. RETENCIÓN',
         type: 'column',
         yAxis: 1,
         data: {!! json_encode($data->col_2->retencion) !!},
         tooltip: {
-            valueSuffix: ''
+            valueSuffix: ' %'
         }
 
     }, {
-        name: 'Porcentaje',
+        name: 'Alcance',
         type: 'spline',
         color: 'red',
         data: {!! json_encode($data->col_2->alcance) !!},

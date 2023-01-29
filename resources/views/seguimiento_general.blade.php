@@ -111,16 +111,13 @@
                     {{ $i->MOS }}</td>
                 <td></td>
                 <td class="r">S/ {{ number_format($i->NOV, 0, '.', ',') }}</td>
-                <td class="r {{ $i->VARIACION > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION }}%
-                </td>
+                <td class="r {{ $i->VARIACION > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION }}%</td>
                 <td></td>
                 <td class="r">S/ {{ number_format($i->PROM, 0, '.', ',') }}</td>
-                <td class="r {{ $i->VARIACION_2 > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION_2
-                    }}%</td>
+                <td class="r {{ $i->VARIACION_2 > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION_2 }}%</td>
                 <td></td>
                 <td class="r">S/ {{ number_format($i->DIC, 0, '.', ',') }}</td>
-                <td class="r {{ $i->VARIACION_3 > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION_3
-                    }}%</td>
+                <td class="r {{ $i->VARIACION_3 > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION_3 }}%</td>
             </tr>
             @endforeach
         </table>
@@ -186,16 +183,13 @@
                     {{ $i->AVANCE }}%</td>
                 <td></td>
                 <td class="r">{{ number_format($i->NOV, 0, '.', ',') }}</td>
-                <td class="r {{ $i->VARIACION > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION }}
-                </td>
+                <td class="r {{ $i->VARIACION > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION }}%</td>
                 <td></td>
                 <td class="r">{{ number_format($i->PROM, 0, '.', ',') }}</td>
-                <td class="r {{ $i->VARIACION_2 > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION_2
-                    }}</td>
+                <td class="r {{ $i->VARIACION_2 > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION_2 }}%</td>
                 <td></td>
                 <td class="r">{{ number_format($i->DIC, 0, '.', ',') }}</td>
-                <td class="r {{ $i->VARIACION_3 > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION_3
-                    }}</td>
+                <td class="r {{ $i->VARIACION_3 > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION_3 }}%</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -262,16 +256,13 @@
                     {{ $i->AVANCE }}%</td>
                 <td></td>
                 <td class="r">{{ number_format($i->NOV, 0, '.', ',') }}</td>
-                <td class="r {{ $i->VARIACION > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION }}
-                </td>
+                <td class="r {{ $i->VARIACION > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION }}%</td>
                 <td></td>
                 <td class="r">{{ number_format($i->PROM, 0, '.', ',') }}</td>
-                <td class="r {{ $i->VARIACION_2 > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION_2
-                    }}</td>
+                <td class="r {{ $i->VARIACION_2 > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION_2 }}%</td>
                 <td></td>
                 <td class="r">{{ number_format($i->DIC, 0, '.', ',') }}</td>
-                <td class="r {{ $i->VARIACION_3 > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION_3
-                    }}</td>
+                <td class="r {{ $i->VARIACION_3 > 0 ? 'text-green bg-green' : 'text-red' }}">{{ $i->VARIACION_3 }}%</td>
                 <td></td>
                 <td></td>
                 <td></td>

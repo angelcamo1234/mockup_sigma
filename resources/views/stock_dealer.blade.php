@@ -98,7 +98,7 @@
             }
         },
         title: {
-            text: 'Porcentaje',
+            text: 'Participación',
             style: {
                 color: Highcharts.getOptions().colors[2]
             }
@@ -108,7 +108,7 @@
     }, { // Secondary yAxis
         gridLineWidth: 0,
         title: {
-            text: 'OTs',
+            text: 'Stock',
             style: {
                 color: Highcharts.getOptions().colors[0]
             }
@@ -151,7 +151,7 @@
             'rgba(255,255,255,0.25)'
     }, */
     series: [{
-        name: 'OTs MEC',
+        name: 'Stock',
         type: 'column',
         yAxis: 1,
         data: {!! json_encode($bars) !!},
@@ -160,7 +160,7 @@
         }
 
     }, {
-        name: 'Porcentaje',
+        name: 'Participación',
         type: 'spline',
         color: 'red',
         data: {!! json_encode($lines) !!},

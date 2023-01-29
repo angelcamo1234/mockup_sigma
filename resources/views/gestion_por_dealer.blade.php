@@ -112,7 +112,7 @@
             <tr>
                 <td style="background-color: #ddebf7">Facturación</td>
                 @foreach ($facturacion as $f)
-                    <td class="text-center">S/ {{ $f }}</td>
+                    <td class="text-center" style="font-size: 14px">S/ {{ number_format($f, 0, '.', ',') }}</td>
                 @endforeach
             </tr>
             <tr>
@@ -121,7 +121,7 @@
             <tr>
                 <td style="background-color: #ddebf7">Ots</td>
                 @foreach ($ots as $o)
-                    <td class="text-center">{{ $o }}</td>
+                    <td class="text-center" style="font-size: 14px">{{ $o }}</td>
                 @endforeach
             </tr>
             <tr>
@@ -130,7 +130,7 @@
             <tr>
                 <td style="background-color: #ddebf7">Ticket</td>
                 @foreach ($ticket as $t)
-                    <td class="text-center">S/ {{ $t }}</td>
+                    <td class="text-center" style="font-size: 14px">S/ {{ number_format($t, 0, '.', ',') }}</td>
                 @endforeach
             </tr>
         </table>
@@ -227,7 +227,7 @@ Highcharts.chart('segundo_cuadro', {
             }
         },
         title: {
-            text: 'Porcentaje',
+            text: 'Cumplimiento',
             style: {
                 color: Highcharts.getOptions().colors[2]
             }
@@ -298,7 +298,7 @@ Highcharts.chart('segundo_cuadro', {
         }
 
     }, {
-        name: 'Porcentaje',
+        name: 'Cumplimiento',
         type: 'spline',
         data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
         tooltip: {

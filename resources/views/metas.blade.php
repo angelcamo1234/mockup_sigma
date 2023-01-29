@@ -27,6 +27,10 @@
 </div>
 
 <div class="row m-3">
+    <div class="d-flex justify-content-end mb-3">
+        <button class="btn rounded-pill" style="background-color: #28a745!important; color: white; margin-right: 10px!important">Descargar Plantilla</button>
+        <button class="btn rounded-pill" style="background-color: #28a745!important; color: white;">Subir Plantilla</button>
+    </div>
     <div class="overflow-auto">
         <table class="table text-center" >
             <tr>
