@@ -27,7 +27,7 @@
         <div class="col-sm-10">
             <select name="servicio" id="servicio" class="form-select">
                 <option value="MECÁNICA">MECÁNICA</option>
-                <option value="DEALER PYP">DEALER PYP</option>
+                <option value="PYP">PYP</option>
                 <option value="MESÓN">MESÓN</option>
             </select>
         </div>
@@ -252,7 +252,7 @@ Highcharts.chart('segundo_cuadro', {
     }, { // Tertiary yAxis
         gridLineWidth: 0,
         title: {
-            text: 'Sea-Level Pressure',
+            text: '',
             style: {
                 color: Highcharts.getOptions().colors[1]
             }

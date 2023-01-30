@@ -11,7 +11,7 @@
             <div class="col-sm-10">
                 <select name="dealer" id="dealer" class="form-select">
                     <option value=""></option>
-                    <option value="DEALER 1">DEALER 1</option>
+                    <option value="DEALER 1" selected>DEALER 1</option>
                     <option value="DEALER 2">DEALER 2</option>
                 </select>
             </div>
@@ -22,11 +22,11 @@
             <div class="col-sm-10">
                 <select name="marca" id="marca" class="form-select">
                     <option value=""></option>
-                    <option value="HYUNDAI">HYUNDAI</option>
+                    <option value="HYUNDAI" selected>HYUNDAI</option>
                 </select>
             </div>
         </div>
-        <div class="row col-12 col-md-6 d-none" id="div_modelo_select">
+        <div class="row col-12 col-md-6" id="div_modelo_select">
             <label for="modelo" class="col-sm-2 col-form-label">MODELO</label>
             <div class="col-sm-10">
                 <select name="modelo" id="modelo" class="form-select">
@@ -158,7 +158,7 @@ Highcharts.chart('dealer-chart', {
         zoomType: 'xy'
     },
     title: {
-        text: 'Ots objetivo',
+        text: '',
         align: 'left'
     },
     /* subtitle: {
@@ -176,6 +176,7 @@ Highcharts.chart('dealer-chart', {
                 color: Highcharts.getOptions().colors[2]
             }
         },
+        min: 0,
         title: {
             text: 'Alcance',
             style: {
@@ -186,6 +187,7 @@ Highcharts.chart('dealer-chart', {
 
     }, { // Secondary yAxis
         gridLineWidth: 0,
+        min: 0,
         title: {
             text: 'OBJ. RETENCIÓN',
             style: {
@@ -201,6 +203,7 @@ Highcharts.chart('dealer-chart', {
 
     }, { // Tertiary yAxis
         gridLineWidth: 0,
+        min: 0,
         title: {
             text: '',
             style: {
@@ -290,7 +293,7 @@ function chart2() {
     },
     
     title: {
-        text: 'Ots objetivo',
+        text: '',
         align: 'left'
     },
     /* subtitle: {
@@ -308,6 +311,7 @@ function chart2() {
                 color: Highcharts.getOptions().colors[2]
             }
         },
+        min: 0,
         title: {
             text: 'Alcance',
             style: {
@@ -333,6 +337,7 @@ function chart2() {
 
     }, { // Tertiary yAxis
         gridLineWidth: 0,
+        min: 0,
         title: {
             text: '',
             style: {

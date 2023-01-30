@@ -49,13 +49,13 @@
                 <td>DIC-22</td>
                 <td colspan="11" class="text-center" style="background-color: #f2f2f2!important">GESTIÓN DE REPUESTOS</td>
                 <td></td>
-                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td style="background-color: #f98b7f; text-align: left!important">PROY.</td>
                 <td></td>
                 <td></td>
-                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td style="background-color: #f98b7f; text-align: left!important">PROY.</td>
                 <td></td>
                 <td></td>
-                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td style="background-color: #f98b7f; text-align: left!important">PROY.</td>
                 <td></td>
             </tr>
             <tr>
@@ -129,13 +129,13 @@
                 <td>DIC-22</td>
                 <td colspan="8" class="text-center r bg-gray">AVANCE PASOS MECÁNICA</td>
                 <td></td>
-                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td style="background-color: #f98b7f; text-align: left!important">PROY.</td>
                 <td></td>
                 <td></td>
-                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td style="background-color: #f98b7f; text-align: left!important">PROY.</td>
                 <td></td>
                 <td></td>
-                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td style="background-color: #f98b7f; text-align: left!important">PROY.</td>
                 <td></td>
             </tr>
             <tr>
@@ -202,13 +202,13 @@
                 <td>DIC-22</td>
                 <td colspan="8" class="text-center r bg-gray">AVANCE PASOS PYP</td>
                 <td></td>
-                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td style="background-color: #f98b7f; text-align: left!important">PROY.</td>
                 <td></td>
                 <td></td>
-                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td style="background-color: #f98b7f; text-align: left!important">PROY.</td>
                 <td></td>
                 <td></td>
-                <td style="background-color: #f98b7f; text-align: left!important">PREVISIÓN vs</td>
+                <td style="background-color: #f98b7f; text-align: left!important">PROY.</td>
                 <td></td>
             </tr>
             <tr>
