@@ -9,6 +9,11 @@
                 <img src="{{ asset('assets/images/Logo.jpg') }}" alt="Logo Sistema" width="300">
             </div>
             <div class="row p-5">
+                @if (session()->has('error_login'))                                
+                <div class="alert alert-danger" role="alert">
+                    {{ session('error_login') }}
+                </div>
+                @endif
                 <form action="{{ route('login.post') }}" method="POST">
                     @csrf
                     <div class="form-group">

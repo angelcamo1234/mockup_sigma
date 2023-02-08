@@ -22,7 +22,13 @@ Route::get('/inicio', function () {
 })->name('home');
 
 Route::post('/login', function () {
+    $usuario = request()->usuario;
+    $password = request()->password;
+
+    if ($usuario !== 'SIGMA' || $password !== 'SIGMA') return redirect()->back()->with('error_login', 'Usuario o Contraseña incorrectos');
+
     return redirect()->route('home');
+    
 })->name('login.post');
 
 Route::get('/seguimiento_general', function () {
