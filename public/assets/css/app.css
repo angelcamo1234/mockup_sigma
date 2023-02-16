@@ -90,3 +90,35 @@
 .bg-dgray {
     background-color: #595959!important;
 }
+
+.bg-reporte {
+    background-color: #dddddd!important;
+}
+
+.bg-rep-top {
+    background-color: #FCE4D6!important;
+}
+
+.bg-rep-prom {
+    background-color: #DDEBF7!important;
+}
+
+.bg-rep-total {
+    background-color: #FFF2CC!important;
+}
+
+.txt-rep-orange {
+    color: #ED7D76
+}
+
+.txt-rep-blue {
+    color: #002060;
+}
+
+.txt-rep-green {
+    color: #A2C45F;
+}
+
+.f-bold {
+    font-weight: bold;
+}

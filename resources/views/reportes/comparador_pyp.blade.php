@@ -5,7 +5,14 @@
 
 <style>
 
-    thead th { position: sticky; top: 0; }
+    .altura {
+        max-height: 80vh;
+    }
+
+    thead {
+    position: sticky;
+    top: 0; /* fija el encabezado en la parte superior del contenedor */    /* cambia el fondo del encabezado para distinguirlo del resto de la tabla */
+    }
     
     th, td {
     padding: 8px;    
@@ -37,17 +44,17 @@
     <div class="mb-3 row col-12 col-md-6">
         <label for="jefe" class="col-sm-2 col-form-label">MONEDA</label>
         <div class="col-sm-10">
-            <select name="jefe" id="jefe" class="form-select">                
-                <option value="SOLES">SOLES</option>
+            <select name="jefe" id="jefe" class="form-select">
                 <option value="DOLARES">DOLARES</option>
+                <option value="SOLES">SOLES</option>                
             </select>
         </div>
     </div>
 </div>
 
-<div class="row m-3 overflow-auto">
+<div class="row m-3 overflow-auto altura">
     <table class="table" style="font-size: 12px">
-        <thead>
+        <thead style="z-index: 9999">
             <tr>
                 @foreach ($dealers as $d)
                     @if($loop->first)
@@ -70,38 +77,38 @@
                         <td colspan="32"></td>
                     @else
                         <td style="background-color: #EFEFEF; z-index: 999;">{!! $d->title !!}</td>
-                        <td {!! $d->bg_color !!}>{{ $d->s ? '$' : '' }}{{ number_format($d->d1 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
-                        <td {!! $d->d1p ? $d->bg_color : '' !!}>{{ $d->d1p ? round($d->d1p, 0) . '%' : null }}</td>
+                        <td class="{{ $d->apply_classes }}">{{ $d->s ? '$' : '' }}{{ number_format($d->d1 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
+                        <td class="{{ $d->d1p ? $d->apply_classes : '' }} {{ $loop->iteration > 9 ? 'txt-rep-blue' : 'txt-rep-green' }} f-bold">{{ $d->d1p ? round($d->d1p, 0) . '%' : null }}</td>
                         <td></td>
-                        <td {!! $d->bg_color !!}>{{ $d->s ? '$' : '' }}{{ number_format($d->d2 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
-                        <td {!! $d->d1p ? $d->bg_color : '' !!}>{{ $d->d2p ? round($d->d2p, 0) . '%' : null }}</td>
+                        <td class="{{ $d->apply_classes }}">{{ $d->s ? '$' : '' }}{{ number_format($d->d2 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
+                        <td class="{{ $d->d2p ? $d->apply_classes : '' }} {{ $loop->iteration > 9 ? 'txt-rep-blue' : 'txt-rep-green' }} f-bold">{{ $d->d2p ? round($d->d2p, 0) . '%' : null }}</td>
                         <td></td>
-                        <td {!! $d->bg_color !!}>{{ $d->s ? '$' : '' }}{{ number_format($d->d3 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
-                        <td {!! $d->d1p ? $d->bg_color : '' !!}>{{ $d->d3p ? round($d->d3p, 0) . '%' : null }}</td>
+                        <td class="{{ $d->apply_classes }}">{{ $d->s ? '$' : '' }}{{ number_format($d->d3 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
+                        <td class="{{ $d->d3p ? $d->apply_classes : '' }} {{ $loop->iteration > 9 ? 'txt-rep-blue' : 'txt-rep-green' }} f-bold">{{ $d->d3p ? round($d->d3p, 0) . '%' : null }}</td>
                         <td></td>
-                        <td {!! $d->bg_color !!}>{{ $d->s ? '$' : '' }}{{ number_format($d->d4 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
-                        <td {!! $d->d1p ? $d->bg_color : '' !!}>{{ $d->d4p ? round($d->d4p, 0) . '%' : null }}</td>
+                        <td class="bg-rep-top {{ $d->apply_classes }}">{{ $d->s ? '$' : '' }}{{ number_format($d->d4 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
+                        <td class="{{ $d->d4p ? 'bg-rep-top ' . $d->apply_classes : '' }} {{ $loop->iteration > 9 ? 'txt-rep-blue' : 'txt-rep-green' }} f-bold">{{ $d->d4p ? round($d->d4p, 0) . '%' : null }}</td>
                         <td></td>
-                        <td {!! $d->bg_color !!}>{{ $d->s ? '$' : '' }}{{ number_format($d->d5 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
-                        <td {!! $d->d1p ? $d->bg_color : '' !!}>{{ $d->d5p ? round($d->d5p, 0) . '%' : null }}</td>
+                        <td class="{{ $d->apply_classes }}">{{ $d->s ? '$' : '' }}{{ number_format($d->d5 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
+                        <td class="{{ $d->d5p ? $d->apply_classes : '' }} {{ $loop->iteration > 9 ? 'txt-rep-blue' : 'txt-rep-green' }} f-bold">{{ $d->d5p ? round($d->d5p, 0) . '%' : null }}</td>
                         <td></td>
-                        <td {!! $d->bg_color !!}>{{ $d->s ? '$' : '' }}{{ number_format($d->d6 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
-                        <td {!! $d->d1p ? $d->bg_color : '' !!}>{{ $d->d6p ? round($d->d6p, 0) . '%' : null }}</td>
+                        <td class="bg-rep-prom {{ $d->apply_classes }}">{{ $d->s ? '$' : '' }}{{ number_format($d->d6 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
+                        <td class="{{ $d->d6p ? 'bg-rep-prom ' . $d->apply_classes : '' }} {{ $loop->iteration > 9 ? 'txt-rep-blue' : 'txt-rep-green' }} f-bold">{{ $d->d6p ? round($d->d6p, 0) . '%' : null }}</td>
                         <td></td>
-                        <td {!! $d->bg_color !!}>{{ $d->s ? '$' : '' }}{{ number_format($d->d7 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
-                        <td {!! $d->d1p ? $d->bg_color : '' !!}>{{ $d->d7p ? round($d->d7p, 0) . '%' : null }}</td>
+                        <td class="{{ $d->apply_classes }}">{{ $d->s ? '$' : '' }}{{ number_format($d->d7 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
+                        <td class="{{ $d->d7p ? $d->apply_classes : '' }} {{ $loop->iteration > 9 ? 'txt-rep-blue' : 'txt-rep-green' }} f-bold">{{ $d->d7p ? round($d->d7p, 0) . '%' : null }}</td>
                         <td></td>
-                        <td {!! $d->bg_color !!}>{{ $d->s ? '$' : '' }}{{ number_format($d->d8 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
-                        <td {!! $d->d1p ? $d->bg_color : '' !!}>{{ $d->d8p ? round($d->d8p, 0) . '%' : null }}</td>
+                        <td class="{{ $d->apply_classes }}">{{ $d->s ? '$' : '' }}{{ number_format($d->d8 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
+                        <td class="{{ $d->d8p ? $d->apply_classes : '' }} {{ $loop->iteration > 9 ? 'txt-rep-blue' : 'txt-rep-green' }} f-bold">{{ $d->d8p ? round($d->d8p, 0) . '%' : null }}</td>
                         <td></td>
-                        <td {!! $d->bg_color !!}>{{ $d->s ? '$' : '' }}{{ number_format($d->d9 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
-                        <td {!! $d->d1p ? $d->bg_color : '' !!}>{{ $d->d9p ? round($d->d9p, 0) . '%' : null }}</td>
+                        <td class="{{ $d->apply_classes }}">{{ $d->s ? '$' : '' }}{{ number_format($d->d9 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
+                        <td class="{{ $d->d9p ? $d->apply_classes : '' }} {{ $loop->iteration > 9 ? 'txt-rep-blue' : 'txt-rep-green' }} f-bold">{{ $d->d9p ? round($d->d9p, 0) . '%' : null }}</td>
                         <td></td>
-                        <td {!! $d->bg_color !!}>{{ $d->s ? '$' : '' }}{{ number_format($d->d10 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
-                        <td {!! $d->d1p ? $d->bg_color : '' !!}>{{ $d->d10p ? round($d->d10p, 0) . '%' : null }}</td>
+                        <td class="{{ $d->apply_classes }}">{{ $d->s ? '$' : '' }}{{ number_format($d->d10 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
+                        <td class="{{ $d->d10p ? $d->apply_classes : '' }} {{ $loop->iteration > 9 ? 'txt-rep-blue' : 'txt-rep-green' }} f-bold">{{ $d->d10p ? round($d->d10p, 0) . '%' : null }}</td>
                         <td></td>
-                        <td {!! $d->bg_color !!}>{{ $d->s ? '$' : '' }}{{ number_format($d->d11 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
-                        <td {!! $d->d1p ? $d->bg_color : '' !!}>{{ $d->d11p ? round($d->d11p, 0) . '%' : null }}</td>
+                        <td class="{{ $d->apply_classes }}">{{ $d->s ? '$' : '' }}{{ number_format($d->d11 * ($d->x100 ? 100 : 1), 0, '', ',') }} {{ $d->porc ? '%' : '' }}</td>
+                        <td class="{{ $d->d11p ? $d->apply_classes : '' }} {{ $loop->iteration > 9 ? 'txt-rep-blue' : 'txt-rep-green' }} f-bold">{{ $d->d11p ? round($d->d11p, 0) . '%' : null }}</td>
                     @endif
                 </tr>
             @endforeach

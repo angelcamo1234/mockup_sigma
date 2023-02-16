@@ -33,7 +33,7 @@
     </div>
 </nav>
 
-<div class="offcanvas offcanvas-start w-25 bg-dblue sidebar" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false" style="width: 220px!important">
+<div class="offcanvas offcanvas-start w-25 bg-dblue sidebar" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false" style="width: 220px!important; z-index: 999999">
     <div class="offcanvas-header">
         <h6 class="offcanvas-title d-none d-sm-block text-white" id="offcanvas">MENÚ</h6>
         <button type="button" class="btn-close bg-secondary" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -105,6 +105,21 @@
                             <span class="d-none d-sm-inline">STOCK DEALER</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('reportes.comparador_repuestos') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'reportes.comparador_repuestos' ? 'text-primary' : 'text-white' }}">
+                            <span class="d-none d-sm-inline">COMPARADOR<br>REPUESTOS</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('reportes.comparador_mecanica') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'reportes.comparador_mecanica' ? 'text-primary' : 'text-white' }}">
+                            <span class="d-none d-sm-inline">COMPARADOR<br>MECÁNICA</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('reportes.comparador_pyp') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'reportes.comparador_pyp' ? 'text-primary' : 'text-white' }}">
+                            <span class="d-none d-sm-inline">COMPARADOR<br>PYP</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item has-submenu">
@@ -127,26 +142,12 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item has-submenu">
+            {{-- <li class="nav-item has-submenu">
                 <a class="nav-link text-white" href="#">REPORTES @include('layouts.row_down')</a>
                 <ul class="submenu collapse">
-                    <li class="nav-item">
-                        <a href="{{ route('reportes.comparador_mecanica') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'reportes.comparador_mecanica' ? 'text-primary' : 'text-white' }}">
-                            <span class="d-none d-sm-inline">COMPARADOR<br>REPUESTOS</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('reportes.comparador_repuestos') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'reportes.comparador_repuestos' ? 'text-primary' : 'text-white' }}">
-                            <span class="d-none d-sm-inline">COMPARADOR<br>MECÁNICA</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('reportes.comparador_pyp') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'reportes.comparador_pyp' ? 'text-primary' : 'text-white' }}">
-                            <span class="d-none d-sm-inline">COMPARADOR<br>PYP</span>
-                        </a>
-                    </li>
+                    
                 </ul>
-            </li>
+            </li> --}}
         </ul>
     </div>
 </div>
