@@ -25,7 +25,7 @@ Route::post('/login', function () {
     $usuario = request()->usuario;
     $password = request()->password;
 
-    if ($usuario !== 'SIGMA' || $password !== 'SIGMA') return redirect()->back()->with('error_login', 'Usuario o Contraseña incorrectos');
+    if ($usuario !== 'DTORREJON' || $password !== 'DTORREJON') return redirect()->back()->with('error_login', 'Usuario o Contraseña incorrectos');
 
     return redirect()->route('home');
     
