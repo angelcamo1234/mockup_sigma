@@ -9,7 +9,7 @@
         <label for="marca" class="col-sm-2 col-form-label">MARCA</label>
         <div class="col-sm-10">
             <select name="marca" id="marca" class="form-select">
-                <option value="HYUNDAI">HYUNDAI</option>
+                <option value="HONDA">HONDA</option>
             </select>
         </div>
     </div>
@@ -17,8 +17,9 @@
         <label for="dealer" class="col-sm-2 col-form-label">DEALER</label>
         <div class="col-sm-10">
             <select name="dealer" id="dealer" class="form-select">
-                <option value="DEALER 1">DEALER 1</option>
-                <option value="DEALER 2">DEALER 2</option>
+                @for ($i = 1; $i <= 10; $i++)
+                    <option value="DEALER {{ $i }}">DEALER {{ $i }}</option>
+                @endfor
             </select>
         </div>
     </div>
@@ -29,6 +30,16 @@
                 <option value="MECÁNICA">MECÁNICA</option>
                 <option value="PYP">PYP</option>
                 <option value="MESÓN">MESÓN</option>
+            </select>
+        </div>
+    </div>
+    <div class="mb-3 row col-12 col-md-6">
+        <label for="servicio" class="col-sm-2 col-form-label">AÑO</label>
+        <div class="col-sm-10">
+            <select name="servicio" id="servicio" class="form-select">
+                <option value="2021">2021</option>
+                <option value="2022" selected>2022</option>
+                <option value="2023">2023</option>
             </select>
         </div>
     </div>
@@ -196,7 +207,7 @@ Highcharts.chart('primer_cuadro', {
         marker: {
             symbol: 'circle'
         },
-        data: {!! json_encode($ticket) !!},
+        data: {!! json_encode($ticket_grafico) !!},
 
     }]
 });
@@ -291,6 +302,7 @@ Highcharts.chart('segundo_cuadro', {
     },{
         name: 'Objetivo',
         type: 'column',
+        color: '#000000',
         yAxis: 1,
         data: {!! json_encode($ots) !!},
         tooltip: {

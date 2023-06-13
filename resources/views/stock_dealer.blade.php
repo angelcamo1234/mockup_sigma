@@ -9,7 +9,7 @@
         <label for="marca" class="col-sm-2 col-form-label">MARCA</label>
         <div class="col-sm-10">
             <select name="marca" id="marca" class="form-select">
-                <option value="HYUNDAI">HYUNDAI</option>
+                <option value="HONDA">HONDA</option>
             </select>
         </div>
     </div>
@@ -17,8 +17,10 @@
         <label for="dealer" class="col-sm-2 col-form-label">DEALER</label>
         <div class="col-sm-10">
             <select name="dealer" id="dealer" class="form-select">
-                <option value="DEALER 1">DEALER 1</option>
-                <option value="DEALER 2">DEALER 2</option>
+                <option value=""></option>
+                    @for ($i = 1; $i <= 10; $i++)
+                    <option value="DEALER {{ $i }}" {{ $i == 1 ? 'selected' : '' }}>DEALER {{ $i }}</option>
+                    @endfor
             </select>
         </div>
     </div>
@@ -94,13 +96,13 @@
         labels: {
             format: '{value}%',
             style: {
-                color: Highcharts.getOptions().colors[2]
+                color: '#FF0000'//Highcharts.getOptions().colors[2]
             }
         },
         title: {
             text: 'Participación',
             style: {
-                color: Highcharts.getOptions().colors[2]
+                color: '#FF0000'//Highcharts.getOptions().colors[2]
             }
         },
         opposite: true

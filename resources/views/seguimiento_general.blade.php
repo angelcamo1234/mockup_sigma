@@ -9,7 +9,7 @@
         <label for="marca" class="col-sm-2 col-form-label">MARCA</label>
         <div class="col-sm-10">
             <select name="marca" id="marca" class="form-select">
-                <option value="HYUNDAI">HYUNDAI</option>
+                <option value="HONDA">HONDA</option>
             </select>
         </div>
     </div>
@@ -25,7 +25,10 @@
         <label for="periodo" class="col-sm-2 col-form-label">PERIODO</label>
         <div class="col-sm-10">
             <select name="periodo" id="periodo" class="form-select">
-                <option value="DIC-22">DIC-22</option>
+                <option value="">SELECCIONE</option>
+                @foreach ($periodo as $idx => $p)
+                    <option value="{{ $idx }}" {{ $p }}>{{ $idx }}</option>
+                @endforeach
             </select>
         </div>
     </div>
@@ -46,7 +49,7 @@
         <table class="table table-sm text-center" style="font-size: 13.5px">
             <tr>
                 <td>MES:</td>
-                <td>DIC-22</td>
+                <td>MAY-23</td>
                 <td colspan="11" class="text-center" style="background-color: #f2f2f2!important">GESTIÓN DE REPUESTOS</td>
                 <td></td>
                 <td style="background-color: #f98b7f; text-align: left!important">PROY.</td>
@@ -73,13 +76,13 @@
                 <td class="bg-yellow-so text-white r">INVENTARIO</td>
                 <td class="bg-yellow-so text-white r">MOS</td>
                 <td></td>
-                <td class="r" style="background-color: #ddebf7">NOV-22</td>
+                <td class="r" style="background-color: #ddebf7">ABR-23</td>
                 <td class="r">VARIACIÓN %</td>
                 <td></td>
                 <td class="r" style="background-color: #ddebf7">PROM 2022</td>
                 <td class="r">VARIACIÓN %</td>
                 <td></td>
-                <td class="r" style="background-color: #ddebf7">DIC-21</td>
+                <td class="r" style="background-color: #ddebf7">MAY-23</td>
                 <td class="r">VARIACIÓN %</td>
             </tr>
             @foreach ($info_1 as $i)
@@ -126,7 +129,7 @@
         <table class="table table-sm text-center" style="font-size: 13px">
             <tr>
                 <td>MES:</td>
-                <td>DIC-22</td>
+                <td>MAY-23</td>
                 <td colspan="8" class="text-center r bg-gray">AVANCE PASOS MECÁNICA</td>
                 <td></td>
                 <td style="background-color: #f98b7f; text-align: left!important">PROY.</td>
@@ -150,13 +153,13 @@
                 <td class="bg-blue-so text-white r">REAL</td>
                 <td class="bg-blue-so text-white r">AVANCE</td>
                 <td></td>
-                <td class="r" style="background-color: #ddebf7">NOV-22</td>
+                <td class="r" style="background-color: #ddebf7">ABR-23</td>
                 <td class="r">VARIACIÓN %</td>
                 <td></td>
                 <td class="r" style="background-color: #ddebf7">PROM 2022</td>
                 <td class="r">VARIACIÓN %</td>
                 <td></td>
-                <td class="r" style="background-color: #ddebf7">DIC-21</td>
+                <td class="r" style="background-color: #ddebf7">MAY-23</td>
                 <td class="r">VARIACIÓN %</td>
             </tr>
             @foreach ($info_2 as $i)
@@ -199,7 +202,7 @@
         <table class="table table-sm text-center mt-3" style="font-size: 13px">
             <tr>
                 <td>MES:</td>
-                <td>DIC-22</td>
+                <td>MAY-23</td>
                 <td colspan="8" class="text-center r bg-gray">AVANCE PASOS PYP</td>
                 <td></td>
                 <td style="background-color: #f98b7f; text-align: left!important">PROY.</td>
@@ -223,13 +226,13 @@
                 <td class="bg-blue-so text-white r">REAL</td>
                 <td class="bg-blue-so text-white r">AVANCE</td>
                 <td></td>
-                <td class="r" style="background-color: #ddebf7">NOV-22</td>
+                <td class="r" style="background-color: #ddebf7">ABR-23</td>
                 <td class="r">VARIACIÓN %</td>
                 <td></td>
                 <td class="r" style="background-color: #ddebf7">PROM 2022</td>
                 <td class="r">VARIACIÓN %</td>
                 <td></td>
-                <td class="r" style="background-color: #ddebf7">DIC-21</td>
+                <td class="r" style="background-color: #ddebf7">MAY-23</td>
                 <td class="r">VARIACIÓN %</td>
             </tr>
             @foreach ($info_3 as $i)

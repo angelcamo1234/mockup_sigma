@@ -11,8 +11,9 @@
             <div class="col-sm-10">
                 <select name="dealer" id="dealer" class="form-select">
                     <option value=""></option>
-                    <option value="DEALER 1" selected>DEALER 1</option>
-                    <option value="DEALER 2">DEALER 2</option>
+                    @for ($i = 1; $i <= 10; $i++)
+                    <option value="DEALER {{ $i }}" {{ $i == 1 ? 'selected' : '' }}>DEALER {{ $i }}</option>
+                    @endfor
                 </select>
             </div>
         </div>
@@ -22,7 +23,7 @@
             <div class="col-sm-10">
                 <select name="marca" id="marca" class="form-select">
                     <option value=""></option>
-                    <option value="HYUNDAI" selected>HYUNDAI</option>
+                    <option value="HONDA" selected>HONDA</option>
                 </select>
             </div>
         </div>
@@ -31,10 +32,10 @@
             <div class="col-sm-10">
                 <select name="modelo" id="modelo" class="form-select">
                     <option value=""></option>
-                    <option value="i10">i10</option>
-                    <option value="i20">i20</option>
-                    <option value="VENUE">VENUE</option>
-                    <option value="TUCSON">TUCSON</option>
+                    <option value="CIVIC">CIVIC</option>
+                    <option value="PILOT">PILOT</option>
+                    <option value="CR-V">CR-V</option>
+                    <option value="WR-V">WR-V</option>
                 </select>
             </div>
         </div>
@@ -173,14 +174,14 @@ Highcharts.chart('dealer-chart', {
         labels: {
             format: '{value}%',
             style: {
-                color: Highcharts.getOptions().colors[2]
+                color: '#FF0000'//Highcharts.getOptions().colors[2]
             }
         },
         min: 0,
         title: {
             text: 'Alcance',
             style: {
-                color: Highcharts.getOptions().colors[2]
+                color: '#FF0000'//Highcharts.getOptions().colors[2]
             }
         },
         opposite: true
@@ -308,14 +309,14 @@ function chart2() {
         labels: {
             format: '{value}%',
             style: {
-                color: Highcharts.getOptions().colors[2]
+                color: '#FF0000'//Highcharts.getOptions().colors[2]
             }
         },
         min: 0,
         title: {
             text: 'Alcance',
             style: {
-                color: Highcharts.getOptions().colors[2]
+                color: '#FF0000'//Highcharts.getOptions().colors[2]
             }
         },
         opposite: true

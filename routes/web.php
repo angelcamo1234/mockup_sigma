@@ -18,6 +18,8 @@ Route::get('/', function () {
 })->name('login');
 
 Route::get('/inicio', function () {
+    if (!session()->has('usuario')) return redirect()->route('login');
+    
     return view('home');
 })->name('home');
 
@@ -25,13 +27,43 @@ Route::post('/login', function () {
     $usuario = request()->usuario;
     $password = request()->password;
 
-    if ($usuario !== 'DTORREJON' || $password !== 'DTORREJON') return redirect()->back()->with('error_login', 'Usuario o Contraseña incorrectos');
+    $usuarios = collect([
+        (object) ['nombre' => 'DICK STEVEN TORREJON' ,'usuario' => 'DTORREJON', 'password' => 'DTORREJON'],
+        (object) ['nombre' => 'ADMINISTRADOR' ,'usuario' => 'admin', 'password' => 'admin'],
+        (object) ['nombre' => 'ADMINISTRADOR' ,'usuario' => 'admin', 'password' => 'adminsigma123'],
+    ]);
+
+    $usuario_logueado = $usuarios->filter(function($u) use($usuario, $password) {
+        return $u->usuario === $usuario && $u->password === $password;
+    })->first();
+
+    if (!$usuario_logueado) return redirect()->back()->with('error_login', 'Usuario o Contraseña incorrectos');
+
+    session()->put('usuario', $usuario_logueado);
 
     return redirect()->route('home');
     
 })->name('login.post');
 
 Route::get('/seguimiento_general', function () {
+    
+    if (!session()->has('usuario')) return redirect()->route('login');
+
+    $periodo = [
+        'ENE-23' => '',
+        'FEB-23' => '',
+        'MAR-23' => '',
+        'ABR-23' => '',
+        'MAY-23' => 'selected',
+        'JUN-23' => '',
+        'JUL-23' => '',
+        'AGO-23' => '',
+        'SEP-23' => '',
+        'OCT-23' => '',
+        'NOV-23' => '',
+        'DIC-23' => '',
+    ];
+
     $info_1 = [
         (object) ['DEALER' => 'DEALER 1', 'META' => 90000, 'PREVISION' => 90000, 'GAP' => 0, 'CUMPLIMIENTO' => 100, 'REAL' => 42878.88, 'AVANCE' => 47.6, 'INVENTARIO' => 150000, 'MOS' => 2.5, 'NOV' => 46806.49, 'VARIACION' => -8.4, 'PROM' => 74298.8058333333, 'VARIACION_2' => -42.3, 'DIC' => 83460.65, 'VARIACION_3' => -48.6],
         (object) ['DEALER' => 'DEALER 2', 'META' => 15000, 'PREVISION' => 10000, 'GAP' => -5000, 'CUMPLIMIENTO' => 66.6666666666667, 'REAL' => 3418.03, 'AVANCE' => 22.8, 'INVENTARIO' => 3418.03, 'MOS' => 1.6, 'NOV' => 7493.28, 'VARIACION' => -54.4, 'PROM' => 22356.5308333333, 'VARIACION_2' => -84.7, 'DIC' => 21310.47, 'VARIACION_3' => -84],
@@ -63,10 +95,12 @@ Route::get('/seguimiento_general', function () {
 
     ];
 
-    return view('seguimiento_general', compact('info_1', 'info_2', 'info_3'));
+    return view('seguimiento_general', compact('info_1', 'info_2', 'info_3', 'periodo'));
 })->name('seguimiento_general');
 
 Route::get('/stock_dealer', function () {
+
+    if (!session()->has('usuario')) return redirect()->route('login');
 
     $dealer = collect([
         (object) ['CLASIFICACION' => 'A', 'STOCK' => 79428, 'PORCENTAJE' => 29],
@@ -96,6 +130,8 @@ Route::get('/stock_dealer', function () {
 })->name('stock_dealer');
 
 Route::get('/gestion_por_dealer', function () {
+    
+    if (!session()->has('usuario')) return redirect()->route('login');
 
     $meses = ['ene-22', 'feb-22', 'mar-22', 'abr-22', 'may-22', 'jun-22', 'jul-22', 'ago-22', 'sep-22', 'oct-22', 'nov-22', 'dic-22'];
 
@@ -104,8 +140,9 @@ Route::get('/gestion_por_dealer', function () {
     $ots = [317, 297, 376, 279, 324, 272, 210, 341, 376, 350, 350, 336, 319];
 
     $ticket = [1136, 1187, 930, 619, 750, 721, 937, 879, 744, 799, 788, 746, 895];
+    $ticket_grafico = [1136, 1187, 930, 619, 750, 721, 937, 879, 744, 799, 788, 746];
 
-    return view('gestion_por_dealer', compact('meses', 'facturacion', 'ots', 'ticket'));
+    return view('gestion_por_dealer', compact('meses', 'facturacion', 'ots', 'ticket', 'ticket_grafico'));
 })->name('gestion_por_dealer');
 
 Route::get('/retencion', function () {
@@ -272,3 +309,22 @@ Route::get('/reportes/comparador_pyp', function() {
 
     return view('reportes.comparador_pyp', compact('dealers', 'data'));
 })->name('reportes.comparador_pyp');
+
+Route::get('/mix_de_ventas', function() {
+    $periodo = [
+        'ENE-23' => '',
+        'FEB-23' => '',
+        'MAR-23' => '',
+        'ABR-23' => '',
+        'MAY-23' => 'selected',
+        'JUN-23' => '',
+        'JUL-23' => '',
+        'AGO-23' => '',
+        'SEP-23' => '',
+        'OCT-23' => '',
+        'NOV-23' => '',
+        'DIC-23' => '',
+    ];
+    
+    return view('mix_de_ventas', compact('periodo'));
+})->name('mix_de_ventas');

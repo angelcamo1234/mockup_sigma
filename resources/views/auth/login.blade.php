@@ -6,7 +6,7 @@
     <div class="card col-12 col-md-6">
         <div class="card-body">
             <div class="w-100 d-flex justify-content-center">
-                <img src="{{ asset('assets/images/Logo.jpg') }}" alt="Logo Sistema" width="300">
+                <img src="{{ asset('assets/images/Logo.png') }}" alt="Logo Sistema" width="180">
             </div>
             <div class="row p-5">
                 @if (session()->has('error_login'))                                

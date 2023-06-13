@@ -9,7 +9,7 @@
         <label for="marca" class="col-sm-2 col-form-label">MARCA</label>
         <div class="col-sm-10">
             <select name="marca" id="marca" class="form-select">
-                <option value="HYUNDAI">HYUNDAI</option>
+                <option value="HONDA">HONDA</option>
             </select>
         </div>
     </div>

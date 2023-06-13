@@ -36,8 +36,8 @@
         <label for="jefe" class="col-sm-2 col-form-label">MARCA</label>
         <div class="col-sm-10">
             <select name="jefe" id="jefe" class="form-select">                
-                <option value="HYUNDAI">HYUNDAI</option>
-                <option value="MMD">MMD</option>
+                <option value="HONDA">HONDA</option>
+                {{-- <option value="MMD">MMD</option> --}}
             </select>
         </div>
     </div>
