@@ -115,6 +115,11 @@
                             <span class="d-none d-sm-inline">COMPARADOR<br>PYP</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('mix_de_ventas') }}" class="nav-link text-truncate {{ Route::currentRouteName() == 'mix_de_ventas' ? 'text-primary' : 'text-white' }}">
+                            <span class="d-none d-sm-inline">MIX DE<br>VENTAS</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item has-submenu">
